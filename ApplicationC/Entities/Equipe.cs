@@ -11,7 +11,6 @@ public partial class Equipe
 
     public string? Lienprototype { get; set; }
 
-
     public string? Login { get; set; }
 
     public string? Password { get; set; }

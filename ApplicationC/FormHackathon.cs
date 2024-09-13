@@ -28,6 +28,8 @@ namespace ApplicationC
                 x.Ville,
                 x.Dateheuredebuth,
                 x.Dateheurefinh,
+                x.Nbplacemax,
+                x.Datebutoir,
                 x.Objectifs,
                 x.IdorganisateurNavigation.Nom,
                 x.IdorganisateurNavigation.Prenom
@@ -41,9 +43,11 @@ namespace ApplicationC
             dgvHackathon.Columns[3].HeaderText = "Ville";
             dgvHackathon.Columns[4].HeaderText = "Date de début";
             dgvHackathon.Columns[5].HeaderText = "Date de fin";
-            dgvHackathon.Columns[6].HeaderText = "Objectifs";
-            dgvHackathon.Columns[7].HeaderText = "Nom Organisateur";
-            dgvHackathon.Columns[8].HeaderText = "Prénom Organisateur";
+            dgvHackathon.Columns[6].HeaderText = "Nombre de place Max";
+            dgvHackathon.Columns[7].HeaderText = "Date Butoir Inscription";
+            dgvHackathon.Columns[8].HeaderText = "Objectifs";
+            dgvHackathon.Columns[9].HeaderText = "Nom Organisateur";
+            dgvHackathon.Columns[10].HeaderText = "Prénom Organisateur";
         }
 
         private void BtnFermer_Click(object sender, EventArgs e)

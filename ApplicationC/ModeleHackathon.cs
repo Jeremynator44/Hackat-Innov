@@ -70,7 +70,7 @@ namespace ApplicationC
         /// <param name="dateF"></param>
         /// <param name="idOrganisateur"></param>
         /// <returns></returns>
-        public static bool AjoutHackathon(string lieu, string ville, string thematique, string objectifs, string conditions, string affiche, DateTime dateD, DateTime dateF, int idOrganisateur)
+        public static bool AjoutHackathon(string lieu, string ville, string thematique, string objectifs, string conditions, string affiche, DateTime dateD, DateTime dateF, int idOrganisateur, DateTime dateButoir, int placeMax)
         {
             Hackathon unHackathon;
             bool vretour = true;
@@ -87,6 +87,9 @@ namespace ApplicationC
                 unHackathon.Dateheuredebuth = dateD;
                 unHackathon.Dateheurefinh = dateF;
                 unHackathon.Idorganisateur = idOrganisateur;
+                unHackathon.Datebutoir = dateButoir;
+                unHackathon.Nbplacemax = placeMax;
+
 
                 Modele.MonModel.Hackathons.Add(unHackathon);
                 Modele.MonModel.SaveChanges();
@@ -133,7 +136,7 @@ namespace ApplicationC
         /// <param name="dateF"></param>
         /// <param name="idOrganisateur"></param>
         /// <returns></returns>
-        public static bool ModificationHackathon(int idH, string lieu, string ville, string thematique, string objectifs, string conditions, string affiche, DateTime dateD, DateTime dateF, int idOrganisateur)
+        public static bool ModificationHackathon(int idH, string lieu, string ville, string thematique, string objectifs, string conditions, string affiche, DateTime dateD, DateTime dateF, int idOrganisateur, DateTime dateButoir, int placemax)
         {
             Hackathon unHackathon;
             bool vretour = true;
@@ -152,6 +155,8 @@ namespace ApplicationC
                 unHackathon.Dateheuredebuth = dateD;
                 unHackathon.Dateheurefinh = dateF;
                 unHackathon.Idorganisateur = idOrganisateur;
+                unHackathon.Datebutoir = dateButoir;
+                unHackathon.Nbplacemax = placemax;
 
                 Modele.MonModel.SaveChanges();
             }
@@ -167,3 +172,5 @@ namespace ApplicationC
 
     }
 }
+
+

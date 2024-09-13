@@ -25,6 +25,10 @@ public partial class Hackathon
 
     public int? Idorganisateur { get; set; }
 
+    public DateTime? Datebutoir { get; set; }
+
+    public int? Nbplacemax { get; set; }
+
     public virtual Organisateur? IdorganisateurNavigation { get; set; }
 
     public virtual ICollection<Inscrire> Inscrires { get; set; } = new List<Inscrire>();

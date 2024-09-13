@@ -71,6 +71,8 @@ namespace ApplicationC
         {
             dtDebut.Value = DateTime.Now;
             dtFin.Value = DateTime.Now;
+            dtButoir.Value = DateTime.Now;
+            numPlaceMax.Value = 0;
             tbAffiche.Clear();
             tbLieu.Clear();
             tbVille.Clear();
@@ -80,18 +82,19 @@ namespace ApplicationC
             cbOrganisateur.SelectedIndex = -1;
             tbLieu.Focus();
         }
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnAction_Click(object sender, EventArgs e)
         {
             int idOrga = -1;
             string lieu, ville, thematique, objectifs, conditions, affiche;
-            DateTime dateDeb, dateFin;
+            int placemax;
+            DateTime dateDeb, dateFin, dateButoir;
 
             if (tbLieu.Text !="" && tbVille.Text !="" && tbThematique.Text !="")
             {
                 // ajout possible si les champs lieu, ville et thématique au moins remplis
-                if (dtDebut.Value < dtFin.Value && dtDebut.Value >= DateTime.Now)
+                if (dtDebut.Value < dtFin.Value && dtDebut.Value >= DateTime.Now && dtButoir.Value <= dtDebut.Value)
                 {
-                    // ajout possible si la date de début en avant la date de fin et si la date de début est bien supérieure ou égale à la date du jour
+                    // ajout possible si la date de début est avant la date de fin et si la date de début est bien supérieure ou égale à la date du jour
                     lieu = tbLieu.Text;
                     ville = tbVille.Text;
                     thematique = tbThematique.Text;
@@ -100,6 +103,9 @@ namespace ApplicationC
                     affiche = tbAffiche.Text;
                     dateDeb = dtDebut.Value;
                     dateFin = dtFin.Value;
+                    placemax = Convert.ToInt32(numPlaceMax.Value);
+                    dateButoir = dtButoir.Value;
+
                     if (cbOrganisateur.SelectedIndex != -1)
                     {
                         idOrga = Convert.ToInt32(cbOrganisateur.SelectedValue.ToString());
@@ -107,7 +113,7 @@ namespace ApplicationC
 
                     if (etat == EtatGestion.Create) // cas de l'ajout
                     {
-                        if (ModeleHackathon.AjoutHackathon(lieu, ville, thematique, objectifs, conditions, affiche, dateDeb, dateFin, idOrga))
+                        if (ModeleHackathon.AjoutHackathon(lieu, ville, thematique, objectifs, conditions, affiche, dateDeb, dateFin, idOrga, dateButoir, placemax))
                         {
                             MessageBox.Show("Hackathon ajouté " + ModeleHackathon.RetourneDernierHackathonSaisi());
                             Annuler();
@@ -116,7 +122,7 @@ namespace ApplicationC
                     if (etat == EtatGestion.Update) // cas de la mise à jour
                     {
                         Hackathon H = (Hackathon)BSListeH.Current;
-                        if (ModeleHackathon.ModificationHackathon(H.Idhackathon, lieu, ville, thematique, objectifs, conditions, affiche, dateDeb, dateFin, idOrga))
+                        if (ModeleHackathon.ModificationHackathon(H.Idhackathon, lieu, ville, thematique, objectifs, conditions, affiche, dateDeb, dateFin, idOrga, dateButoir, placemax))
                         {
                             MessageBox.Show("Hackathon modifié");
                             gbInfo.Visible = false;
@@ -163,6 +169,8 @@ namespace ApplicationC
                 tbAffiche.Text = H.Affiche;
                 dtDebut.Value = H.Dateheuredebuth;
                 dtFin.Value = H.Dateheurefinh;
+                dtButoir.Value = Convert.ToDateTime(H.Datebutoir);
+                numPlaceMax.Value = Convert.ToInt32(H.Nbplacemax);
                 if (H.Idorganisateur != null)
                 {
                     cbOrganisateur.Text = H.IdorganisateurNavigation.Nom;

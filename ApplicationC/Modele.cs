@@ -10,13 +10,13 @@ namespace ApplicationC
 {
     public static class Modele
     {
-        private static Ap3LesProfsContext monModel;
+        private static Ap3BjcodeContext monModel;
 
-        public static Ap3LesProfsContext MonModel { get => monModel; set => monModel = value; }
+        public static Ap3BjcodeContext MonModel { get => monModel; set => monModel = value; }
 
         public static void init()
         {
-            monModel = new Ap3LesProfsContext();
+            monModel = new Ap3BjcodeContext();
         }
     }
 }

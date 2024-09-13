@@ -13,7 +13,7 @@ public partial class Membre
 
     public string Prenom { get; set; } = null!;
 
-    public string Email { get; set; } = null!;
+    public string? Email { get; set; }
 
     public string? Telephone { get; set; }
 
