@@ -47,7 +47,6 @@ namespace ApplicationC
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-
         }
 
         private void GestionDesHackathonsToolStripMenuItem_Click(object sender, EventArgs e)
