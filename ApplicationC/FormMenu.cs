@@ -61,9 +61,7 @@ namespace ApplicationC
 
         private void SeDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Authentification authentification = new Authentification();
-            authentification.Show();
-            this.Hide();
+            Application.Restart();
         }
 
         private void menuStripPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

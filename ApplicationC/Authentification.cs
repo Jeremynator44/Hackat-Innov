@@ -26,7 +26,20 @@ namespace ApplicationC
             txtIdentifiant.Text = "";
             txtPassword.Text = "";
         }
-        
+
+        private void btnVoirMasquer_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.UseSystemPasswordChar == true)
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            
+        }
+
         private void btnAuthentification_Click(object sender, EventArgs e)
         {
             if (txtIdentifiant.Text == "" && txtPassword.Text == "")
@@ -55,8 +68,10 @@ namespace ApplicationC
                         }
                     }
                 }
-             
+
             }
         }
+
+        
     }
 }

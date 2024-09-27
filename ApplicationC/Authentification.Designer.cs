@@ -34,6 +34,7 @@
             btnAuthentification = new Button();
             lblAuthentification = new Label();
             pictureBox1 = new PictureBox();
+            btnVoirMasquer = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -88,12 +89,23 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
+            // btnVoirMasquer
+            // 
+            btnVoirMasquer.Location = new Point(296, 253);
+            btnVoirMasquer.Name = "btnVoirMasquer";
+            btnVoirMasquer.Size = new Size(61, 24);
+            btnVoirMasquer.TabIndex = 8;
+            btnVoirMasquer.Text = "Voir";
+            btnVoirMasquer.UseVisualStyleBackColor = true;
+            btnVoirMasquer.Click += btnVoirMasquer_Click;
+            // 
             // Authentification
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(369, 363);
+            Controls.Add(btnVoirMasquer);
             Controls.Add(lblAuthentification);
             Controls.Add(btnAuthentification);
             Controls.Add(txtPassword);
@@ -115,5 +127,6 @@
         private Button btnAuthentification;
         private Label lblAuthentification;
         private PictureBox pictureBox1;
+        private Button btnVoirMasquer;
     }
 }
