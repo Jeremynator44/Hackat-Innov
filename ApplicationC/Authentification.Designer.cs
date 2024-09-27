@@ -41,7 +41,7 @@
             // 
             txtIdentifiant.Location = new Point(78, 205);
             txtIdentifiant.Name = "txtIdentifiant";
-            txtIdentifiant.PlaceholderText = "Identifiant";
+            txtIdentifiant.PlaceholderText = "Email";
             txtIdentifiant.Size = new Size(212, 23);
             txtIdentifiant.TabIndex = 3;
             // 
@@ -53,6 +53,7 @@
             txtPassword.Size = new Size(212, 23);
             txtPassword.TabIndex = 4;
             txtPassword.TabStop = false;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // btnAuthentification
             // 

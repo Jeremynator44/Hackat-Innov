@@ -35,9 +35,10 @@
             gestionDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
             modificationToolStripMenuItem = new ToolStripMenuItem();
             eQUIPEToolStripMenuItem = new ToolStripMenuItem();
-            qUITTERToolStripMenuItem = new ToolStripMenuItem();
+            SeDeconnecterToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
             pictureBox1 = new PictureBox();
+            QUITTERToolStripMenuItem = new ToolStripMenuItem();
             menuStripPrincipal.SuspendLayout();
             panelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -46,7 +47,7 @@
             // menuStripPrincipal
             // 
             menuStripPrincipal.ImageScalingSize = new Size(20, 20);
-            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { hACKATHONToolStripMenuItem, eQUIPEToolStripMenuItem, qUITTERToolStripMenuItem });
+            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { hACKATHONToolStripMenuItem, eQUIPEToolStripMenuItem, SeDeconnecterToolStripMenuItem, QUITTERToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
             menuStripPrincipal.Padding = new Padding(7, 2, 0, 2);
@@ -89,12 +90,12 @@
             eQUIPEToolStripMenuItem.Size = new Size(58, 20);
             eQUIPEToolStripMenuItem.Text = "EQUIPE";
             // 
-            // qUITTERToolStripMenuItem
+            // SeDeconnecterToolStripMenuItem
             // 
-            qUITTERToolStripMenuItem.Name = "qUITTERToolStripMenuItem";
-            qUITTERToolStripMenuItem.Size = new Size(64, 20);
-            qUITTERToolStripMenuItem.Text = "QUITTER";
-            qUITTERToolStripMenuItem.Click += QUITTERToolStripMenuItem_Click;
+            SeDeconnecterToolStripMenuItem.Name = "SeDeconnecterToolStripMenuItem";
+            SeDeconnecterToolStripMenuItem.Size = new Size(116, 20);
+            SeDeconnecterToolStripMenuItem.Text = "SE DECONNECTER";
+            SeDeconnecterToolStripMenuItem.Click += SeDeconnecterToolStripMenuItem_Click;
             // 
             // panelPrincipal
             // 
@@ -116,6 +117,13 @@
             pictureBox1.Size = new Size(916, 484);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // QUITTERToolStripMenuItem
+            // 
+            QUITTERToolStripMenuItem.Name = "QUITTERToolStripMenuItem";
+            QUITTERToolStripMenuItem.Size = new Size(64, 20);
+            QUITTERToolStripMenuItem.Text = "QUITTER";
+            QUITTERToolStripMenuItem.Click += QUITTERToolStripMenuItem_Click;
             // 
             // FormMenu
             // 
@@ -146,9 +154,10 @@
         private System.Windows.Forms.ToolStripMenuItem listeDesHackathonsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionDesHackathonsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eQUIPEToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem qUITTERToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SeDeconnecterToolStripMenuItem;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.ToolStripMenuItem modificationToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private ToolStripMenuItem QUITTERToolStripMenuItem;
     }
 }

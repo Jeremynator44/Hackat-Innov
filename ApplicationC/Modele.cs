@@ -19,18 +19,6 @@ namespace ApplicationC
         {
             monModel = new Ap3BjcodeContext();
         }
-        public static List<Administrateur> listeAdministrateurs()
-        {
-            return monModel.Administrateurs.ToList();
-        }
-        public static List<Equipe> listeEquipes()
-        {
-            return monModel.Equipes.ToList();
-        }
-        public static List<Hackathon> listeHackathons()
-        {
-            return monModel.Hackathons.Include(a => a.IdorganisateurNavigation).ToList();
-        }
 
     }
     

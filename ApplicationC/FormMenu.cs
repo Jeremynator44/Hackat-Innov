@@ -59,9 +59,17 @@ namespace ApplicationC
             openChildForm(new FormGestionHackathon(EtatGestion.Update)); // Form de Gestion en modification (update)
         }
 
+        private void SeDeconnecterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Authentification authentification = new Authentification();
+            authentification.Show();
+            this.Hide();
+        }
+
         private void menuStripPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            
         }
+        
     }
 }
