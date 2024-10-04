@@ -34,11 +34,12 @@
             listeDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
             gestionDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
             modificationToolStripMenuItem = new ToolStripMenuItem();
+            archivageToolStripMenuItem = new ToolStripMenuItem();
             eQUIPEToolStripMenuItem = new ToolStripMenuItem();
             SeDeconnecterToolStripMenuItem = new ToolStripMenuItem();
+            QUITTERToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
             pictureBox1 = new PictureBox();
-            QUITTERToolStripMenuItem = new ToolStripMenuItem();
             menuStripPrincipal.SuspendLayout();
             panelPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -50,92 +51,99 @@
             menuStripPrincipal.Items.AddRange(new ToolStripItem[] { hACKATHONToolStripMenuItem, eQUIPEToolStripMenuItem, SeDeconnecterToolStripMenuItem, QUITTERToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
-            menuStripPrincipal.Padding = new Padding(7, 2, 0, 2);
-            menuStripPrincipal.Size = new Size(934, 24);
+            menuStripPrincipal.Padding = new Padding(8, 3, 0, 3);
+            menuStripPrincipal.Size = new Size(1067, 30);
             menuStripPrincipal.TabIndex = 0;
             menuStripPrincipal.Text = "menuStrip1";
             menuStripPrincipal.ItemClicked += menuStripPrincipal_ItemClicked;
             // 
             // hACKATHONToolStripMenuItem
             // 
-            hACKATHONToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeDesHackathonsToolStripMenuItem, gestionDesHackathonsToolStripMenuItem, modificationToolStripMenuItem });
+            hACKATHONToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeDesHackathonsToolStripMenuItem, gestionDesHackathonsToolStripMenuItem, modificationToolStripMenuItem, archivageToolStripMenuItem });
             hACKATHONToolStripMenuItem.Name = "hACKATHONToolStripMenuItem";
-            hACKATHONToolStripMenuItem.Size = new Size(91, 20);
+            hACKATHONToolStripMenuItem.Size = new Size(112, 24);
             hACKATHONToolStripMenuItem.Text = "HACKATHON";
             // 
             // listeDesHackathonsToolStripMenuItem
             // 
             listeDesHackathonsToolStripMenuItem.Name = "listeDesHackathonsToolStripMenuItem";
-            listeDesHackathonsToolStripMenuItem.Size = new Size(189, 22);
+            listeDesHackathonsToolStripMenuItem.Size = new Size(232, 26);
             listeDesHackathonsToolStripMenuItem.Text = "Liste des hackathons";
             listeDesHackathonsToolStripMenuItem.Click += ListeDesHackathonsToolStripMenuItem_Click;
             // 
             // gestionDesHackathonsToolStripMenuItem
             // 
             gestionDesHackathonsToolStripMenuItem.Name = "gestionDesHackathonsToolStripMenuItem";
-            gestionDesHackathonsToolStripMenuItem.Size = new Size(189, 22);
+            gestionDesHackathonsToolStripMenuItem.Size = new Size(232, 26);
             gestionDesHackathonsToolStripMenuItem.Text = "Ajout d'un hackathon";
             gestionDesHackathonsToolStripMenuItem.Click += GestionDesHackathonsToolStripMenuItem_Click;
             // 
             // modificationToolStripMenuItem
             // 
             modificationToolStripMenuItem.Name = "modificationToolStripMenuItem";
-            modificationToolStripMenuItem.Size = new Size(189, 22);
+            modificationToolStripMenuItem.Size = new Size(232, 26);
             modificationToolStripMenuItem.Text = "Modification";
             modificationToolStripMenuItem.Click += ModificationToolStripMenuItem_Click;
+            // 
+            // archivageToolStripMenuItem
+            // 
+            archivageToolStripMenuItem.Name = "archivageToolStripMenuItem";
+            archivageToolStripMenuItem.Size = new Size(232, 26);
+            archivageToolStripMenuItem.Text = "Archivage";
+            archivageToolStripMenuItem.Click += ArchivageToolStripMenuItem_Click;
             // 
             // eQUIPEToolStripMenuItem
             // 
             eQUIPEToolStripMenuItem.Name = "eQUIPEToolStripMenuItem";
-            eQUIPEToolStripMenuItem.Size = new Size(58, 20);
+            eQUIPEToolStripMenuItem.Size = new Size(72, 24);
             eQUIPEToolStripMenuItem.Text = "EQUIPE";
             // 
             // SeDeconnecterToolStripMenuItem
             // 
             SeDeconnecterToolStripMenuItem.Name = "SeDeconnecterToolStripMenuItem";
-            SeDeconnecterToolStripMenuItem.Size = new Size(116, 20);
+            SeDeconnecterToolStripMenuItem.Size = new Size(146, 24);
             SeDeconnecterToolStripMenuItem.Text = "SE DECONNECTER";
             SeDeconnecterToolStripMenuItem.Click += SeDeconnecterToolStripMenuItem_Click;
+            // 
+            // QUITTERToolStripMenuItem
+            // 
+            QUITTERToolStripMenuItem.Name = "QUITTERToolStripMenuItem";
+            QUITTERToolStripMenuItem.Size = new Size(81, 24);
+            QUITTERToolStripMenuItem.Text = "QUITTER";
+            QUITTERToolStripMenuItem.Click += QUITTERToolStripMenuItem_Click;
             // 
             // panelPrincipal
             // 
             panelPrincipal.BackColor = Color.FloralWhite;
             panelPrincipal.BackgroundImageLayout = ImageLayout.Center;
             panelPrincipal.Controls.Add(pictureBox1);
-            panelPrincipal.Location = new Point(0, 32);
-            panelPrincipal.Margin = new Padding(4);
+            panelPrincipal.Location = new Point(0, 43);
+            panelPrincipal.Margin = new Padding(5);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(934, 488);
+            panelPrincipal.Size = new Size(1067, 651);
             panelPrincipal.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(4, 4);
-            pictureBox1.Margin = new Padding(4);
+            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Margin = new Padding(5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(916, 484);
+            pictureBox1.Size = new Size(1047, 645);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // QUITTERToolStripMenuItem
-            // 
-            QUITTERToolStripMenuItem.Name = "QUITTERToolStripMenuItem";
-            QUITTERToolStripMenuItem.Size = new Size(64, 20);
-            QUITTERToolStripMenuItem.Text = "QUITTER";
-            QUITTERToolStripMenuItem.Click += QUITTERToolStripMenuItem_Click;
-            // 
             // FormMenu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(934, 519);
+            ClientSize = new Size(1067, 692);
             ControlBox = false;
             Controls.Add(panelPrincipal);
             Controls.Add(menuStripPrincipal);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripPrincipal;
-            Margin = new Padding(4);
+            Margin = new Padding(5);
             Name = "FormMenu";
             Text = "HACKAT'INNOV";
             Load += FormMenu_Load;
@@ -159,5 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem modificationToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private ToolStripMenuItem QUITTERToolStripMenuItem;
+        private ToolStripMenuItem archivageToolStripMenuItem;
     }
 }

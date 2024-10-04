@@ -11,6 +11,8 @@ public partial class Inscrire
 
     public DateOnly Dateinscription { get; set; }
 
+    public DateOnly? Datedesinscription { get; set; }
+
     public virtual Equipe IdequipeNavigation { get; set; } = null!;
 
     public virtual Hackathon IdhackathonNavigation { get; set; } = null!;

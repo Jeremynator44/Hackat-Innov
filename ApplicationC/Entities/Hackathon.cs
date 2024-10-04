@@ -29,6 +29,8 @@ public partial class Hackathon
 
     public int? Nbplacemax { get; set; }
 
+    public bool EstArchive { get; set; }
+
     public virtual Organisateur? IdorganisateurNavigation { get; set; }
 
     public virtual ICollection<Inscrire> Inscrires { get; set; } = new List<Inscrire>();

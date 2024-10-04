@@ -66,8 +66,12 @@ namespace ApplicationC
 
         private void menuStripPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            
+
         }
-        
+
+        private void ArchivageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormArchivageHackathon()); // Form de Gestion en suppression
+        }
     }
 }

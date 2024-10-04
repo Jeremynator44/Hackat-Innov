@@ -26,6 +26,8 @@ public partial class Ap3BjcodeContext : DbContext
 
     public virtual DbSet<Membre> Membres { get; set; }
 
+    public virtual DbSet<Migration> Migrations { get; set; }
+
     public virtual DbSet<Organisateur> Organisateurs { get; set; }
 
     public virtual DbSet<Token> Tokens { get; set; }
@@ -73,6 +75,10 @@ public partial class Ap3BjcodeContext : DbContext
             entity.HasIndex(e => e.Login, "ulogin").IsUnique();
 
             entity.Property(e => e.Idequipe).HasColumnName("idequipe");
+            entity.Property(e => e.Imagepath)
+                .HasMaxLength(255)
+                .HasDefaultValueSql("'/img/anonyme.png'")
+                .HasColumnName("imagepath");
             entity.Property(e => e.Lienprototype)
                 .HasMaxLength(255)
                 .HasColumnName("lienprototype");
@@ -109,6 +115,7 @@ public partial class Ap3BjcodeContext : DbContext
             entity.Property(e => e.Dateheurefinh)
                 .HasColumnType("datetime")
                 .HasColumnName("dateheurefinh");
+            entity.Property(e => e.EstArchive).HasColumnName("est_archive");
             entity.Property(e => e.Idorganisateur).HasColumnName("idorganisateur");
             entity.Property(e => e.Lieu)
                 .HasMaxLength(128)
@@ -144,6 +151,7 @@ public partial class Ap3BjcodeContext : DbContext
 
             entity.Property(e => e.Idhackathon).HasColumnName("idhackathon");
             entity.Property(e => e.Idequipe).HasColumnName("idequipe");
+            entity.Property(e => e.Datedesinscription).HasColumnName("datedesinscription");
             entity.Property(e => e.Dateinscription).HasColumnName("dateinscription");
 
             entity.HasOne(d => d.IdequipeNavigation).WithMany(p => p.Inscrires)
@@ -173,19 +181,34 @@ public partial class Ap3BjcodeContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("lienportfolio");
             entity.Property(e => e.Nom)
-                .HasMaxLength(128)
+                .HasMaxLength(255)
                 .HasColumnName("nom");
             entity.Property(e => e.Prenom)
-                .HasMaxLength(128)
+                .HasMaxLength(255)
                 .HasColumnName("prenom");
             entity.Property(e => e.Telephone)
-                .HasMaxLength(128)
+                .HasMaxLength(10)
                 .HasColumnName("telephone");
 
             entity.HasOne(d => d.IdequipeNavigation).WithMany(p => p.Membres)
                 .HasForeignKey(d => d.Idequipe)
                 .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("membre_ibfk_2");
+        });
+
+        modelBuilder.Entity<Migration>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity
+                .ToTable("migrations")
+                .UseCollation("utf8mb4_unicode_ci");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Batch).HasColumnName("batch");
+            entity.Property(e => e.Migration1)
+                .HasMaxLength(255)
+                .HasColumnName("migration");
         });
 
         modelBuilder.Entity<Organisateur>(entity =>
