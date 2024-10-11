@@ -27,6 +27,11 @@ namespace ApplicationC
             openChildForm(new FormHackathon());
         }
 
+        private void ListeDesMembresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormMembres());
+        }
+
 
 
         public Form activeForm = null;

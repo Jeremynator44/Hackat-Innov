@@ -75,6 +75,7 @@ public partial class Ap3BjcodeContext : DbContext
             entity.HasIndex(e => e.Login, "ulogin").IsUnique();
 
             entity.Property(e => e.Idequipe).HasColumnName("idequipe");
+            entity.Property(e => e.EstInscrite).HasColumnName("est_inscrite");
             entity.Property(e => e.Imagepath)
                 .HasMaxLength(255)
                 .HasDefaultValueSql("'/img/anonyme.png'")
@@ -107,6 +108,7 @@ public partial class Ap3BjcodeContext : DbContext
                 .HasMaxLength(255)
                 .HasColumnName("conditions");
             entity.Property(e => e.Datebutoir)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("datetime")
                 .HasColumnName("datebutoir");
             entity.Property(e => e.Dateheuredebuth)
@@ -151,6 +153,7 @@ public partial class Ap3BjcodeContext : DbContext
 
             entity.Property(e => e.Idhackathon).HasColumnName("idhackathon");
             entity.Property(e => e.Idequipe).HasColumnName("idequipe");
+            entity.Property(e => e.Datearchivage).HasColumnName("datearchivage");
             entity.Property(e => e.Datedesinscription).HasColumnName("datedesinscription");
             entity.Property(e => e.Dateinscription).HasColumnName("dateinscription");
 

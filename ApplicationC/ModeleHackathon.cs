@@ -17,7 +17,7 @@ namespace ApplicationC
         /// <returns></returns>
         public static List<Hackathon> listeHackathons()
         {
-            return Modele.MonModel.Hackathons.Include(a => a.IdorganisateurNavigation).ToList();
+            return Modele.MonModel.Hackathons.Include(a => a.IdorganisateurNavigation).Where(a => a.EstArchive == false).ToList();
         }
 
 
@@ -168,6 +168,32 @@ namespace ApplicationC
             return vretour;
         }
 
+        public static bool ArchivageHackathon(int idHackathon)
+        {
+            bool vretour = true;
+            try
+            {
+                Hackathon hackathon = RecupererHackathon(idHackathon);
+                hackathon.EstArchive = true;
+                Modele.MonModel.SaveChanges();
+
+
+                Hackathon h = Modele.MonModel.Hackathons.Include(p => p.Inscrires).First(x => x.Idhackathon == idHackathon);
+                
+                List<Inscrire> lesI = h.Inscrires.ToList();
+                foreach (Inscrire I in lesI)
+                {
+                    I.Datearchivage = DateOnly.FromDateTime(DateTime.Now);
+                    Modele.MonModel.SaveChanges();
+                }
+            }
+            catch (Exception ex) 
+            {
+                vretour = false;
+                MessageBox.Show(ex.Message.ToString());
+            }
+            return vretour;
+        }
 
 
     }

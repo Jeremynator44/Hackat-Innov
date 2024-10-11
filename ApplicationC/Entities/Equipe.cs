@@ -17,6 +17,8 @@ public partial class Equipe
 
     public string Imagepath { get; set; } = null!;
 
+    public bool EstInscrite { get; set; }
+
     public virtual ICollection<Inscrire> Inscrires { get; set; } = new List<Inscrire>();
 
     public virtual ICollection<Membre> Membres { get; set; } = new List<Membre>();

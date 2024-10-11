@@ -36,6 +36,7 @@
             modificationToolStripMenuItem = new ToolStripMenuItem();
             archivageToolStripMenuItem = new ToolStripMenuItem();
             eQUIPEToolStripMenuItem = new ToolStripMenuItem();
+            listeMembreToolStripMenuItem = new ToolStripMenuItem();
             SeDeconnecterToolStripMenuItem = new ToolStripMenuItem();
             QUITTERToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
@@ -67,36 +68,44 @@
             // listeDesHackathonsToolStripMenuItem
             // 
             listeDesHackathonsToolStripMenuItem.Name = "listeDesHackathonsToolStripMenuItem";
-            listeDesHackathonsToolStripMenuItem.Size = new Size(232, 26);
-            listeDesHackathonsToolStripMenuItem.Text = "Liste des hackathons";
+            listeDesHackathonsToolStripMenuItem.Size = new Size(200, 26);
+            listeDesHackathonsToolStripMenuItem.Text = "Liste hackathons";
             listeDesHackathonsToolStripMenuItem.Click += ListeDesHackathonsToolStripMenuItem_Click;
             // 
             // gestionDesHackathonsToolStripMenuItem
             // 
             gestionDesHackathonsToolStripMenuItem.Name = "gestionDesHackathonsToolStripMenuItem";
-            gestionDesHackathonsToolStripMenuItem.Size = new Size(232, 26);
-            gestionDesHackathonsToolStripMenuItem.Text = "Ajout d'un hackathon";
+            gestionDesHackathonsToolStripMenuItem.Size = new Size(200, 26);
+            gestionDesHackathonsToolStripMenuItem.Text = "Ajouter";
             gestionDesHackathonsToolStripMenuItem.Click += GestionDesHackathonsToolStripMenuItem_Click;
             // 
             // modificationToolStripMenuItem
             // 
             modificationToolStripMenuItem.Name = "modificationToolStripMenuItem";
-            modificationToolStripMenuItem.Size = new Size(232, 26);
-            modificationToolStripMenuItem.Text = "Modification";
+            modificationToolStripMenuItem.Size = new Size(200, 26);
+            modificationToolStripMenuItem.Text = "Modifier";
             modificationToolStripMenuItem.Click += ModificationToolStripMenuItem_Click;
             // 
             // archivageToolStripMenuItem
             // 
             archivageToolStripMenuItem.Name = "archivageToolStripMenuItem";
-            archivageToolStripMenuItem.Size = new Size(232, 26);
-            archivageToolStripMenuItem.Text = "Archivage";
+            archivageToolStripMenuItem.Size = new Size(200, 26);
+            archivageToolStripMenuItem.Text = "Archiver";
             archivageToolStripMenuItem.Click += ArchivageToolStripMenuItem_Click;
             // 
             // eQUIPEToolStripMenuItem
             // 
+            eQUIPEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeMembreToolStripMenuItem });
             eQUIPEToolStripMenuItem.Name = "eQUIPEToolStripMenuItem";
             eQUIPEToolStripMenuItem.Size = new Size(72, 24);
             eQUIPEToolStripMenuItem.Text = "EQUIPE";
+            // 
+            // listeMembreToolStripMenuItem
+            // 
+            listeMembreToolStripMenuItem.Name = "listeMembreToolStripMenuItem";
+            listeMembreToolStripMenuItem.Size = new Size(224, 26);
+            listeMembreToolStripMenuItem.Text = "Liste Membres";
+            listeMembreToolStripMenuItem.Click += ListeDesMembresToolStripMenuItem_Click;
             // 
             // SeDeconnecterToolStripMenuItem
             // 
@@ -168,5 +177,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private ToolStripMenuItem QUITTERToolStripMenuItem;
         private ToolStripMenuItem archivageToolStripMenuItem;
+        private ToolStripMenuItem listeMembreToolStripMenuItem;
     }
 }
