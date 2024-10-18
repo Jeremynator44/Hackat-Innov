@@ -24,14 +24,18 @@ namespace ApplicationC
 
         private void ListeDesHackathonsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormHackathon());
+            openChildForm(new FormHackathon());   // Form de Liste des Hackathons
         }
 
         private void ListeDesMembresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openChildForm(new FormMembres());
+            openChildForm(new FormMembres());   // Form de Liste des Membres
         }
 
+        private void ListeDesEquipesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FormEquipes()); // Form de Liste des Equipes
+        }
 
 
         public Form activeForm = null;

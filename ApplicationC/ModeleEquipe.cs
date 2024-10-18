@@ -8,11 +8,16 @@ using System.Threading.Tasks;
 
 namespace ApplicationC
 {
-    public static class ModeleMembre
+    public static class ModeleEquipe
     {
-        public static List<Membre> listeMembres()
+        public static List<Equipe> listeEquipes()
         {
-            return Modele.MonModel.Membres.Include(a => a.IdequipeNavigation).ToList();
+            return Modele.MonModel.Equipes.ToList();
+        }
+
+        public static bool EquipeInscrite()
+        {
+            return true;
         }
     }
 }

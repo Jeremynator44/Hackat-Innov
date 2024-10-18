@@ -37,6 +37,7 @@
             archivageToolStripMenuItem = new ToolStripMenuItem();
             eQUIPEToolStripMenuItem = new ToolStripMenuItem();
             listeMembreToolStripMenuItem = new ToolStripMenuItem();
+            listeEquipesToolStripMenuItem = new ToolStripMenuItem();
             SeDeconnecterToolStripMenuItem = new ToolStripMenuItem();
             QUITTERToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
@@ -95,7 +96,7 @@
             // 
             // eQUIPEToolStripMenuItem
             // 
-            eQUIPEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeMembreToolStripMenuItem });
+            eQUIPEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeMembreToolStripMenuItem, listeEquipesToolStripMenuItem });
             eQUIPEToolStripMenuItem.Name = "eQUIPEToolStripMenuItem";
             eQUIPEToolStripMenuItem.Size = new Size(72, 24);
             eQUIPEToolStripMenuItem.Text = "EQUIPE";
@@ -106,6 +107,13 @@
             listeMembreToolStripMenuItem.Size = new Size(224, 26);
             listeMembreToolStripMenuItem.Text = "Liste Membres";
             listeMembreToolStripMenuItem.Click += ListeDesMembresToolStripMenuItem_Click;
+            // 
+            // listeEquipesToolStripMenuItem
+            // 
+            listeEquipesToolStripMenuItem.Name = "listeEquipesToolStripMenuItem";
+            listeEquipesToolStripMenuItem.Size = new Size(224, 26);
+            listeEquipesToolStripMenuItem.Text = "Liste Equipes";
+            listeEquipesToolStripMenuItem.Click += ListeDesEquipesToolStripMenuItem_Click;
             // 
             // SeDeconnecterToolStripMenuItem
             // 
@@ -178,5 +186,6 @@
         private ToolStripMenuItem QUITTERToolStripMenuItem;
         private ToolStripMenuItem archivageToolStripMenuItem;
         private ToolStripMenuItem listeMembreToolStripMenuItem;
+        private ToolStripMenuItem listeEquipesToolStripMenuItem;
     }
 }

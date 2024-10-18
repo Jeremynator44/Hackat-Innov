@@ -28,7 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
+            dgvMembre = new DataGridView();
+            bsMembre = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)dgvMembre).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bsMembre).BeginInit();
             SuspendLayout();
+            // 
+            // dgvMembre
+            // 
+            dgvMembre.AllowUserToAddRows = false;
+            dgvMembre.AllowUserToDeleteRows = false;
+            dgvMembre.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvMembre.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMembre.Location = new Point(53, 59);
+            dgvMembre.Margin = new Padding(4, 5, 4, 5);
+            dgvMembre.MultiSelect = false;
+            dgvMembre.Name = "dgvMembre";
+            dgvMembre.ReadOnly = true;
+            dgvMembre.RowHeadersWidth = 51;
+            dgvMembre.Size = new Size(941, 473);
+            dgvMembre.TabIndex = 1;
             // 
             // FormMembres
             // 
@@ -36,12 +56,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             ClientSize = new Size(1045, 591);
+            Controls.Add(dgvMembre);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormMembres";
             Text = "FormMembres";
+            Load += FormMembres_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvMembre).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bsMembre).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView dgvMembre;
+        private BindingSource bsMembre;
     }
 }
