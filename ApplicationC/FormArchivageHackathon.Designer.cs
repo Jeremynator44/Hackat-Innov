@@ -64,7 +64,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(1016, 556);
+            ClientSize = new Size(1034, 603);
             Controls.Add(btnArchiver);
             Controls.Add(dgvArchivageListeHackatons);
             FormBorderStyle = FormBorderStyle.None;

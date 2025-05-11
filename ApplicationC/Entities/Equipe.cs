@@ -17,9 +17,17 @@ public partial class Equipe
 
     public string Imagepath { get; set; } = null!;
 
-    public bool EstInscrite { get; set; }
+    public bool Enable2fa { get; set; }
+
+    public string? Google2faSecret { get; set; }
+
+    public string? Recuperation2fa { get; set; }
+
+    public string? Codedesactivation2fa { get; set; }
 
     public virtual ICollection<Inscrire> Inscrires { get; set; } = new List<Inscrire>();
+
+    public virtual ICollection<Log> Logs { get; set; } = new List<Log>();
 
     public virtual ICollection<Membre> Membres { get; set; } = new List<Membre>();
 

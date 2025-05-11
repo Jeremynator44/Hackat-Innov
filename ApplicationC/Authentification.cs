@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static QRCoder.PayloadGenerator;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 
@@ -62,9 +63,18 @@ namespace ApplicationC
                     {
                         if (ModeleAdministrateur.VerifAdministrateur(txtPassword.Text, txtIdentifiant.Text))
                         {
-                            FormMenu formmenu = new FormMenu();
-                            formmenu.Show();
-                            this.Hide();
+                            if (ModeleAdministrateur.DoubleAuth(txtIdentifiant.Text, "vérifier")){
+                                Form2FA form2fa = new Form2FA(txtIdentifiant.Text, true);
+                                form2fa.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                FormMenu formmenu = new FormMenu(txtIdentifiant.Text, false);
+                                formmenu.Show();
+                                this.Hide();
+                            }
+                            
                         }
                     }
                 }

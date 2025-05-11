@@ -15,11 +15,59 @@ namespace ApplicationC
         /// Retourne la liste des hackathons en incluant l'organisateur
         /// </summary>
         /// <returns></returns>
+        ///
         public static List<Hackathon> listeHackathons()
         {
             return Modele.MonModel.Hackathons.Include(a => a.IdorganisateurNavigation).Where(a => a.EstArchive == false).ToList();
         }
 
+        public static List<Hackathon> listeHackathons(string thematique, string dateheuredebuth, string ville)
+        {
+            if (thematique != "")
+            {
+                if (dateheuredebuth != "")
+                {
+                    DateTime date = DateTime.Parse(dateheuredebuth); // Conversion en DateTime
+
+                    if (ville != "")
+                    {
+                        return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Thematique == thematique && a.Dateheuredebuth == date && a.Ville == ville).ToList();
+                    }
+                    else
+                    {
+                        return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Thematique == thematique && a.Dateheuredebuth == date).ToList();
+                    }
+                }
+                else
+                {
+                    if (ville != "")
+                    {
+                        return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Thematique == thematique && a.Ville == ville).ToList();
+                    }
+                    else
+                    {
+                        return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Thematique == thematique).ToList();
+                    }
+                }
+            }
+            else if (dateheuredebuth != "")
+            {
+                DateTime date = DateTime.Parse(dateheuredebuth); // Conversion en DateTime
+                if (ville != "")
+                {
+                    return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Dateheuredebuth == date && a.Ville == ville).ToList();
+                }
+                else
+                {
+                    return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Dateheuredebuth == date).ToList();
+                }
+            }
+            else if (ville != "")
+            {
+                return Modele.MonModel.Hackathons.Where(a => a.EstArchive == false && a.Ville == ville).ToList();
+            }
+            return Modele.MonModel.Hackathons.Include(a => a.IdorganisateurNavigation).Where(a => a.EstArchive == false).ToList();
+        }
 
 
         /// <summary>

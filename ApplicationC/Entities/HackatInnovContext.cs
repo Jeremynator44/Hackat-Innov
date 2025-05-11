@@ -5,13 +5,13 @@ using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
 namespace ApplicationC.Entities;
 
-public partial class Ap3BjcodeContext : DbContext
+public partial class HackatInnovContext : DbContext
 {
-    public Ap3BjcodeContext()
+    public HackatInnovContext()
     {
     }
 
-    public Ap3BjcodeContext(DbContextOptions<Ap3BjcodeContext> options)
+    public HackatInnovContext(DbContextOptions<HackatInnovContext> options)
         : base(options)
     {
     }
@@ -40,7 +40,7 @@ public partial class Ap3BjcodeContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseMySql("server=192.168.10.16;port=3306;user=ap3_bjcode-2;password=BwfCO3xH;database=ap3_bjcode", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.4.1-mysql"));
+        => optionsBuilder.UseMySql("server=192.168.150.54;port=5001;user=ap3_bjcode;password=BwfCO3xH;database=hackat_innov", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.4.5-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -106,16 +106,6 @@ public partial class Ap3BjcodeContext : DbContext
             entity.Property(e => e.UpdatedAt)
                 .HasColumnType("timestamp")
                 .HasColumnName("updated_at");
-
-            //entity.HasOne(d => d.EquipeNavigation).WithMany(p => p.Commentaires)
-            //    .HasForeignKey(d => d.Equipe)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("fk_commentaires_equipe");
-
-            //entity.HasOne(d => d.HackathonNavigation).WithMany(p => p.Commentaires)
-            //    .HasForeignKey(d => d.Hackathon)
-            //    .OnDelete(DeleteBehavior.ClientSetNull)
-            //    .HasConstraintName("fk_commentaires_hackathon");
         });
 
         modelBuilder.Entity<Equipe>(entity =>
@@ -135,7 +125,7 @@ public partial class Ap3BjcodeContext : DbContext
                 .HasColumnType("text")
                 .HasColumnName("google2fa_secret");
             entity.Property(e => e.Imagepath)
-                .HasMaxLength(255)
+                .HasMaxLength(2555)
                 .HasDefaultValueSql("'/img/anonyme.png'")
                 .HasColumnName("imagepath");
             entity.Property(e => e.Lienprototype)

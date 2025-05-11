@@ -30,14 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             menuStripPrincipal = new MenuStrip();
-            hACKATHONToolStripMenuItem = new ToolStripMenuItem();
-            listeDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
-            gestionDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
-            modificationToolStripMenuItem = new ToolStripMenuItem();
-            archivageToolStripMenuItem = new ToolStripMenuItem();
-            eQUIPEToolStripMenuItem = new ToolStripMenuItem();
-            listeMembreToolStripMenuItem = new ToolStripMenuItem();
-            listeEquipesToolStripMenuItem = new ToolStripMenuItem();
+            HackathonToolStripMenuItem = new ToolStripMenuItem();
+            ListeDesHackathonsToolStripMenuItem = new ToolStripMenuItem();
+            AjoutHackatonsToolStripMenuItem = new ToolStripMenuItem();
+            ModifierHackathonsToolStripMenuItem = new ToolStripMenuItem();
+            ArchiverHackathonsToolStripMenuItem = new ToolStripMenuItem();
+            EquipeToolStripMenuItem = new ToolStripMenuItem();
+            ListeDesEquipesToolStripMenuItem = new ToolStripMenuItem();
+            AjouterEquipesToolStripMenuItem = new ToolStripMenuItem();
+            ModifierEquipesToolStripMenuItem = new ToolStripMenuItem();
+            MembreToolStripMenuItem = new ToolStripMenuItem();
+            ListeDesMembresToolStripMenuItem = new ToolStripMenuItem();
+            AjouterMembresToolStripMenuItem = new ToolStripMenuItem();
+            ModifierMembresToolStripMenuItem = new ToolStripMenuItem();
+            sécuritéToolStripMenuItem = new ToolStripMenuItem();
+            activerToolStripMenuItem = new ToolStripMenuItem();
+            désactiverToolStripMenuItem = new ToolStripMenuItem();
+            ListeDésactivationToolStripMenuItem = new ToolStripMenuItem();
             SeDeconnecterToolStripMenuItem = new ToolStripMenuItem();
             QUITTERToolStripMenuItem = new ToolStripMenuItem();
             panelPrincipal = new Panel();
@@ -50,82 +59,144 @@
             // menuStripPrincipal
             // 
             menuStripPrincipal.ImageScalingSize = new Size(20, 20);
-            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { hACKATHONToolStripMenuItem, eQUIPEToolStripMenuItem, SeDeconnecterToolStripMenuItem, QUITTERToolStripMenuItem });
+            menuStripPrincipal.Items.AddRange(new ToolStripItem[] { HackathonToolStripMenuItem, EquipeToolStripMenuItem, MembreToolStripMenuItem, sécuritéToolStripMenuItem, SeDeconnecterToolStripMenuItem, QUITTERToolStripMenuItem });
             menuStripPrincipal.Location = new Point(0, 0);
             menuStripPrincipal.Name = "menuStripPrincipal";
-            menuStripPrincipal.Padding = new Padding(8, 3, 0, 3);
-            menuStripPrincipal.Size = new Size(1067, 30);
+            menuStripPrincipal.Padding = new Padding(7, 2, 0, 2);
+            menuStripPrincipal.Size = new Size(906, 24);
             menuStripPrincipal.TabIndex = 0;
             menuStripPrincipal.Text = "menuStrip1";
             menuStripPrincipal.ItemClicked += menuStripPrincipal_ItemClicked;
             // 
-            // hACKATHONToolStripMenuItem
+            // HackathonToolStripMenuItem
             // 
-            hACKATHONToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeDesHackathonsToolStripMenuItem, gestionDesHackathonsToolStripMenuItem, modificationToolStripMenuItem, archivageToolStripMenuItem });
-            hACKATHONToolStripMenuItem.Name = "hACKATHONToolStripMenuItem";
-            hACKATHONToolStripMenuItem.Size = new Size(112, 24);
-            hACKATHONToolStripMenuItem.Text = "HACKATHON";
+            HackathonToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ListeDesHackathonsToolStripMenuItem, AjoutHackatonsToolStripMenuItem, ModifierHackathonsToolStripMenuItem, ArchiverHackathonsToolStripMenuItem });
+            HackathonToolStripMenuItem.Name = "HackathonToolStripMenuItem";
+            HackathonToolStripMenuItem.Size = new Size(91, 20);
+            HackathonToolStripMenuItem.Text = "HACKATHON";
             // 
-            // listeDesHackathonsToolStripMenuItem
+            // ListeDesHackathonsToolStripMenuItem
             // 
-            listeDesHackathonsToolStripMenuItem.Name = "listeDesHackathonsToolStripMenuItem";
-            listeDesHackathonsToolStripMenuItem.Size = new Size(200, 26);
-            listeDesHackathonsToolStripMenuItem.Text = "Liste hackathons";
-            listeDesHackathonsToolStripMenuItem.Click += ListeDesHackathonsToolStripMenuItem_Click;
+            ListeDesHackathonsToolStripMenuItem.Name = "ListeDesHackathonsToolStripMenuItem";
+            ListeDesHackathonsToolStripMenuItem.Size = new Size(164, 22);
+            ListeDesHackathonsToolStripMenuItem.Text = "Liste Hackathons";
+            ListeDesHackathonsToolStripMenuItem.Click += ListeDesHackathonsToolStripMenuItem_Click;
             // 
-            // gestionDesHackathonsToolStripMenuItem
+            // AjoutHackatonsToolStripMenuItem
             // 
-            gestionDesHackathonsToolStripMenuItem.Name = "gestionDesHackathonsToolStripMenuItem";
-            gestionDesHackathonsToolStripMenuItem.Size = new Size(200, 26);
-            gestionDesHackathonsToolStripMenuItem.Text = "Ajouter";
-            gestionDesHackathonsToolStripMenuItem.Click += GestionDesHackathonsToolStripMenuItem_Click;
+            AjoutHackatonsToolStripMenuItem.Name = "AjoutHackatonsToolStripMenuItem";
+            AjoutHackatonsToolStripMenuItem.Size = new Size(164, 22);
+            AjoutHackatonsToolStripMenuItem.Text = "Ajouter";
+            AjoutHackatonsToolStripMenuItem.Click += AjouterHackathonsToolStripMenuItem_Click;
             // 
-            // modificationToolStripMenuItem
+            // ModifierHackathonsToolStripMenuItem
             // 
-            modificationToolStripMenuItem.Name = "modificationToolStripMenuItem";
-            modificationToolStripMenuItem.Size = new Size(200, 26);
-            modificationToolStripMenuItem.Text = "Modifier";
-            modificationToolStripMenuItem.Click += ModificationToolStripMenuItem_Click;
+            ModifierHackathonsToolStripMenuItem.Name = "ModifierHackathonsToolStripMenuItem";
+            ModifierHackathonsToolStripMenuItem.Size = new Size(164, 22);
+            ModifierHackathonsToolStripMenuItem.Text = "Modifier";
+            ModifierHackathonsToolStripMenuItem.Click += ModifierHackathonsToolStripMenuItem_Click;
             // 
-            // archivageToolStripMenuItem
+            // ArchiverHackathonsToolStripMenuItem
             // 
-            archivageToolStripMenuItem.Name = "archivageToolStripMenuItem";
-            archivageToolStripMenuItem.Size = new Size(200, 26);
-            archivageToolStripMenuItem.Text = "Archiver";
-            archivageToolStripMenuItem.Click += ArchivageToolStripMenuItem_Click;
+            ArchiverHackathonsToolStripMenuItem.Name = "ArchiverHackathonsToolStripMenuItem";
+            ArchiverHackathonsToolStripMenuItem.Size = new Size(164, 22);
+            ArchiverHackathonsToolStripMenuItem.Text = "Archiver";
+            ArchiverHackathonsToolStripMenuItem.Click += ArchiverHackathonsToolStripMenuItem_Click;
             // 
-            // eQUIPEToolStripMenuItem
+            // EquipeToolStripMenuItem
             // 
-            eQUIPEToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { listeMembreToolStripMenuItem, listeEquipesToolStripMenuItem });
-            eQUIPEToolStripMenuItem.Name = "eQUIPEToolStripMenuItem";
-            eQUIPEToolStripMenuItem.Size = new Size(72, 24);
-            eQUIPEToolStripMenuItem.Text = "EQUIPE";
+            EquipeToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ListeDesEquipesToolStripMenuItem, AjouterEquipesToolStripMenuItem, ModifierEquipesToolStripMenuItem });
+            EquipeToolStripMenuItem.Name = "EquipeToolStripMenuItem";
+            EquipeToolStripMenuItem.Size = new Size(58, 20);
+            EquipeToolStripMenuItem.Text = "EQUIPE";
             // 
-            // listeMembreToolStripMenuItem
+            // ListeDesEquipesToolStripMenuItem
             // 
-            listeMembreToolStripMenuItem.Name = "listeMembreToolStripMenuItem";
-            listeMembreToolStripMenuItem.Size = new Size(224, 26);
-            listeMembreToolStripMenuItem.Text = "Liste Membres";
-            listeMembreToolStripMenuItem.Click += ListeDesMembresToolStripMenuItem_Click;
+            ListeDesEquipesToolStripMenuItem.Name = "ListeDesEquipesToolStripMenuItem";
+            ListeDesEquipesToolStripMenuItem.Size = new Size(180, 22);
+            ListeDesEquipesToolStripMenuItem.Text = "Liste Equipes";
+            ListeDesEquipesToolStripMenuItem.Click += ListeDesEquipesToolStripMenuItem_Click;
             // 
-            // listeEquipesToolStripMenuItem
+            // AjouterEquipesToolStripMenuItem
             // 
-            listeEquipesToolStripMenuItem.Name = "listeEquipesToolStripMenuItem";
-            listeEquipesToolStripMenuItem.Size = new Size(224, 26);
-            listeEquipesToolStripMenuItem.Text = "Liste Equipes";
-            listeEquipesToolStripMenuItem.Click += ListeDesEquipesToolStripMenuItem_Click;
+            AjouterEquipesToolStripMenuItem.Name = "AjouterEquipesToolStripMenuItem";
+            AjouterEquipesToolStripMenuItem.Size = new Size(180, 22);
+            AjouterEquipesToolStripMenuItem.Text = "Ajouter";
+            AjouterEquipesToolStripMenuItem.Click += AjouterEquipesToolStripMenuItem_Click;
+            // 
+            // ModifierEquipesToolStripMenuItem
+            // 
+            ModifierEquipesToolStripMenuItem.Name = "ModifierEquipesToolStripMenuItem";
+            ModifierEquipesToolStripMenuItem.Size = new Size(180, 22);
+            ModifierEquipesToolStripMenuItem.Text = "Modifier";
+            ModifierEquipesToolStripMenuItem.Click += ModifierEquipesToolStripMenuItem_Click;
+            // 
+            // MembreToolStripMenuItem
+            // 
+            MembreToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ListeDesMembresToolStripMenuItem, AjouterMembresToolStripMenuItem, ModifierMembresToolStripMenuItem });
+            MembreToolStripMenuItem.Name = "MembreToolStripMenuItem";
+            MembreToolStripMenuItem.Size = new Size(67, 20);
+            MembreToolStripMenuItem.Text = "MEMBRE";
+            // 
+            // ListeDesMembresToolStripMenuItem
+            // 
+            ListeDesMembresToolStripMenuItem.Name = "ListeDesMembresToolStripMenuItem";
+            ListeDesMembresToolStripMenuItem.Size = new Size(151, 22);
+            ListeDesMembresToolStripMenuItem.Text = "Liste Membres";
+            ListeDesMembresToolStripMenuItem.Click += ListeDesMembresToolStripMenuItem_Click;
+            // 
+            // AjouterMembresToolStripMenuItem
+            // 
+            AjouterMembresToolStripMenuItem.Name = "AjouterMembresToolStripMenuItem";
+            AjouterMembresToolStripMenuItem.Size = new Size(151, 22);
+            AjouterMembresToolStripMenuItem.Text = "Ajouter";
+            AjouterMembresToolStripMenuItem.Click += AjouterMembresToolStripMenuItem_Click;
+            // 
+            // ModifierMembresToolStripMenuItem
+            // 
+            ModifierMembresToolStripMenuItem.Name = "ModifierMembresToolStripMenuItem";
+            ModifierMembresToolStripMenuItem.Size = new Size(151, 22);
+            ModifierMembresToolStripMenuItem.Text = "Modifier";
+            ModifierMembresToolStripMenuItem.Click += ModifierMembresToolStripMenuItem_Click;
+            // 
+            // sécuritéToolStripMenuItem
+            // 
+            sécuritéToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { activerToolStripMenuItem, désactiverToolStripMenuItem, ListeDésactivationToolStripMenuItem });
+            sécuritéToolStripMenuItem.Name = "sécuritéToolStripMenuItem";
+            sécuritéToolStripMenuItem.Size = new Size(172, 20);
+            sécuritéToolStripMenuItem.Text = "DOUBLE AUTHENTIFICATION";
+            // 
+            // activerToolStripMenuItem
+            // 
+            activerToolStripMenuItem.Name = "activerToolStripMenuItem";
+            activerToolStripMenuItem.Size = new Size(172, 22);
+            activerToolStripMenuItem.Text = "Activer";
+            activerToolStripMenuItem.Click += activerToolStripMenuItem_Click;
+            // 
+            // désactiverToolStripMenuItem
+            // 
+            désactiverToolStripMenuItem.Name = "désactiverToolStripMenuItem";
+            désactiverToolStripMenuItem.Size = new Size(172, 22);
+            désactiverToolStripMenuItem.Text = "Désactiver";
+            désactiverToolStripMenuItem.Click += désactiverToolStripMenuItem_Click;
+            // 
+            // ListeDésactivationToolStripMenuItem
+            // 
+            ListeDésactivationToolStripMenuItem.Name = "ListeDésactivationToolStripMenuItem";
+            ListeDésactivationToolStripMenuItem.Size = new Size(172, 22);
+            ListeDésactivationToolStripMenuItem.Text = "Liste Désactivation";
             // 
             // SeDeconnecterToolStripMenuItem
             // 
             SeDeconnecterToolStripMenuItem.Name = "SeDeconnecterToolStripMenuItem";
-            SeDeconnecterToolStripMenuItem.Size = new Size(146, 24);
+            SeDeconnecterToolStripMenuItem.Size = new Size(116, 20);
             SeDeconnecterToolStripMenuItem.Text = "SE DECONNECTER";
             SeDeconnecterToolStripMenuItem.Click += SeDeconnecterToolStripMenuItem_Click;
             // 
             // QUITTERToolStripMenuItem
             // 
             QUITTERToolStripMenuItem.Name = "QUITTERToolStripMenuItem";
-            QUITTERToolStripMenuItem.Size = new Size(81, 24);
+            QUITTERToolStripMenuItem.Size = new Size(64, 20);
             QUITTERToolStripMenuItem.Text = "QUITTER";
             QUITTERToolStripMenuItem.Click += QUITTERToolStripMenuItem_Click;
             // 
@@ -134,33 +205,32 @@
             panelPrincipal.BackColor = Color.FloralWhite;
             panelPrincipal.BackgroundImageLayout = ImageLayout.Center;
             panelPrincipal.Controls.Add(pictureBox1);
-            panelPrincipal.Location = new Point(0, 43);
-            panelPrincipal.Margin = new Padding(5);
+            panelPrincipal.Location = new Point(0, 32);
+            panelPrincipal.Margin = new Padding(4);
             panelPrincipal.Name = "panelPrincipal";
-            panelPrincipal.Size = new Size(1067, 651);
+            panelPrincipal.Size = new Size(905, 452);
             panelPrincipal.TabIndex = 1;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(5, 5);
-            pictureBox1.Margin = new Padding(5);
+            pictureBox1.Location = new Point(4, 4);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1047, 645);
+            pictureBox1.Size = new Size(905, 452);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // FormMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 692);
-            ControlBox = false;
+            ClientSize = new Size(906, 484);
             Controls.Add(panelPrincipal);
             Controls.Add(menuStripPrincipal);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStripPrincipal;
-            Margin = new Padding(5);
+            Margin = new Padding(4);
             Name = "FormMenu";
             Text = "HACKAT'INNOV";
             Load += FormMenu_Load;
@@ -175,17 +245,26 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStripPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem hACKATHONToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem listeDesHackathonsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionDesHackathonsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eQUIPEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HackathonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListeDesHackathonsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AjoutHackatonsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem EquipeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SeDeconnecterToolStripMenuItem;
         private System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem modificationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModifierHackathonsToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ToolStripMenuItem QUITTERToolStripMenuItem;
-        private ToolStripMenuItem archivageToolStripMenuItem;
-        private ToolStripMenuItem listeMembreToolStripMenuItem;
-        private ToolStripMenuItem listeEquipesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QUITTERToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ArchiverHackathonsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListeDesEquipesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sécuritéToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem activerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListeDésactivationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem désactiverToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MembreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ListeDesMembresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AjouterMembresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModifierMembresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AjouterEquipesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ModifierEquipesToolStripMenuItem;
     }
 }

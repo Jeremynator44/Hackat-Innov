@@ -53,7 +53,6 @@
             txtPassword.PlaceholderText = "Mot de Passe";
             txtPassword.Size = new Size(212, 23);
             txtPassword.TabIndex = 4;
-            txtPassword.TabStop = false;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // btnAuthentification
@@ -62,7 +61,6 @@
             btnAuthentification.Name = "btnAuthentification";
             btnAuthentification.Size = new Size(75, 23);
             btnAuthentification.TabIndex = 5;
-            btnAuthentification.TabStop = false;
             btnAuthentification.Text = "Valider";
             btnAuthentification.UseVisualStyleBackColor = true;
             btnAuthentification.Click += btnAuthentification_Click;
@@ -95,6 +93,7 @@
             btnVoirMasquer.Name = "btnVoirMasquer";
             btnVoirMasquer.Size = new Size(61, 24);
             btnVoirMasquer.TabIndex = 8;
+            btnVoirMasquer.TabStop = false;
             btnVoirMasquer.Text = "Voir";
             btnVoirMasquer.UseVisualStyleBackColor = true;
             btnVoirMasquer.Click += btnVoirMasquer_Click;

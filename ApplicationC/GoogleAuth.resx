@@ -117,4 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbl_Description.Text" xml:space="preserve">
+    <value>À chaque connexion, vous serez invité à saisir un code unique, généré par le QR code à scanner ci-dessous avec 
+l'application Google Authenticator. Un code de récupération vous est fourni en cas de perte d'accès à 
+votre appareil. Pour des raisons de sécurité, l'activation/désactivation de la double authentification sera tracée.</value>
+  </data>
 </root>

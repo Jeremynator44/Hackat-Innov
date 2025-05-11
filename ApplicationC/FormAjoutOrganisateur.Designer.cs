@@ -156,7 +156,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkKhaki;
+            BackColor = Color.Silver;
             ClientSize = new Size(389, 471);
             Controls.Add(label4);
             Controls.Add(BtnFermer);

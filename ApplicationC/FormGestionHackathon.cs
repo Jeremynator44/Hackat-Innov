@@ -154,6 +154,7 @@ namespace ApplicationC
 
         private void BSListeH_CurrentChanged(object sender, EventArgs e)
         {
+
             // si un hackathon est sélectionné dans la liste des hackathons
             if (cbListe.SelectedIndex != -1)
             {

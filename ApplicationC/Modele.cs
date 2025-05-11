@@ -11,13 +11,13 @@ namespace ApplicationC
 {
     public static class Modele
     {
-        private static Ap3BjcodeContext monModel;
+        private static HackatInnovContext monModel;
 
-        public static Ap3BjcodeContext MonModel { get => monModel; set => monModel = value; }
+        public static HackatInnovContext MonModel { get => monModel; set => monModel = value; }
 
         public static void init()
         {
-            monModel = new Ap3BjcodeContext();
+            monModel = new HackatInnovContext();
         }
 
     }

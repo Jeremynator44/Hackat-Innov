@@ -43,5 +43,39 @@ namespace ApplicationC
             dgvMembre.Columns[6].HeaderText = "Lien Portfolio";
             dgvMembre.Columns[7].HeaderText = "Equipe";
         }
+
+        private void SupprimerMembreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Type type = bsMembre.Current.GetType();
+            int idM = (int)type.GetProperty("Idmembre").GetValue(bsMembre.Current, null);
+
+            Membre M = ModeleMembre.RecupererMembre(idM);
+            DialogResult result = MessageBox.Show("Êtes-vous certain de vouloir supprimer le membre : " + M.Nom + " " + M.Prenom + " appartenant à l'équipe " + M.IdequipeNavigation.Nomequipe,"ERREUR",MessageBoxButtons.YesNo,MessageBoxIcon.Error);
+
+            if (result == DialogResult.Yes) 
+            {
+                if (ModeleMembre.SupprimerMembre(idM))
+                {
+                    MessageBox.Show("Le membre a bien été supprimé !");
+                    bsMembre.DataSource = ModeleMembre.listeMembres().Select(static x => new
+                    {
+                        x.Idmembre,
+                        x.Nom,
+                        x.Prenom,
+                        x.Email,
+                        x.Telephone,
+                        x.Datenaissance,
+                        x.Lienportfolio,
+                        x.IdequipeNavigation.Nomequipe
+                    }).OrderBy(x => x.Idmembre);
+                }
+                else
+                {
+                    MessageBox.Show("Le membre n'a pas été supprimé !");
+                }
+
+            }
+
+        }
     }
 }

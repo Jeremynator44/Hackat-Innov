@@ -14,10 +14,14 @@ namespace ApplicationC
         /// Retourne la liste des inscriptions en incluant les hackathons et les équipes
         /// </summary>
         /// <returns></returns>
-        public static List<Inscrire> listeInscription()
+        public static List<Inscrire> listeInscription(int idH)
         {
-            return Modele.MonModel.Inscrires.Include(a => a.IdequipeNavigation).Include(a => a.IdhackathonNavigation).ToList();
+            return Modele.MonModel.Inscrires.Include(a => a.IdequipeNavigation).Where(a => a.Idhackathon == idH && a.Datedesinscription == null).ToList();
         }
 
+        public static Inscrire RecupererInscription(int idE, int idH)
+        {
+            return Modele.MonModel.Inscrires.First(x => x.IdhackathonNavigation.Idhackathon == idH && x.IdequipeNavigation.Idequipe == idE);
+        }
     }
 }
